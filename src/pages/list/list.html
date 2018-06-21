@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Historial de visitas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Search header -->
+  <ion-grid no-padding>
+    <ion-row class="row-srch">
+      <ion-col>
+        <ion-searchbar placeholder="Nombre del cliente" (ionInput)="filterItems($event)"></ion-searchbar>
+      </ion-col>
+      <ion-col>
+        <ion-row align-items-center class="row-search">
+          <ion-col class="col-datetime">
+            <ion-item class="item-datetime">
+              <ion-label><ion-icon name="search"></ion-icon></ion-label>
+              <ion-datetime class="datetime-style" monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre" [(ngModel)]="selectDate" displayFormat="DD MMMM YY" pickerFormat="DD/MMMM/YYYY" doneText="Buscar" cancelText="Cancelar" placeholder="Busca por fecha..." (ionChange)="filterDate(selectDate)"></ion-datetime>
+            </ion-item>
+            <ion-icon *ngIf="selectDate" class="btn-clear" name="close-circle" (click)="eraseDate()"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-srch">
+      <ion-col>
+        <ion-searchbar placeholder="Población" (ionInput)="filterTown($event)"></ion-searchbar>
+      </ion-col>
+      <ion-col>
+          <ion-searchbar placeholder="Código Postal" (ionInput)="filterCP($event)"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-searchbar placeholder="Buscar fecha..." (click)="getDatePicker()" [(ngModel)]="selectDate" (ionChange)="filterDate(selectDate)"></ion-searchbar> -->
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Fecha
+      </ion-col>
+      <ion-col>
+        Cliente
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center class="row-info" *ngFor="let item of items" (click)="showDetails(item)">
+      <ion-col class="col-date">
+        {{ item.createdAt }}
+      </ion-col>
+      <ion-col>
+        {{ item.client }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando historial...">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

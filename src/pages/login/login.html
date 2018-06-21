@@ -1,0 +1,50 @@
+<ion-content>
+
+  <div class="login_body">
+    <ion-grid no-padding>
+      <form [formGroup]="loginForm" (ngSubmit)="logIn()" >
+        <ion-row>
+          <ion-col>
+            <img class="logo_login" width="100%" src="assets/imgs/logo_marmoles.png" />
+          </ion-col>
+        </ion-row>
+        <div class="back_form">
+          <ion-row>
+            <ion-col>
+              <h2 class="title" style="margin:0 auto;">INICIAR SESIÓN</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row class="padding_user">
+            <ion-col>
+              <ion-item>
+                <ion-input formControlName="email" type="text" placeholder="Usuario"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div text-center padding>
+                <a class="btn_reset" ion-button block (click)="goToResetPassword()">¿Olvidaste la contraseña?</a>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div padding>
+                <button class="btn_send" ion-button block type="submit" [disabled]="!loginForm.valid">ENTRAR</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
+    </ion-grid>
+  </div>
+
+</ion-content>

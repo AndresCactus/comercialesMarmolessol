@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><img class="img_header" width="40px" height="40px" src="assets/imgs/logo_header.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center padding>
+  
+  <h2 class="title" style="margin:0 auto;">FORMULARIO DE VISITA</h2>
+    <div>
+      <ion-grid no-padding>
+        <form [formGroup]="homeForm" (ngSubmit)="next()" >
+          <div class="back_form">
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="client" type="text" placeholder="Cliente"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="direction" type="text" placeholder="Dirección"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="town" type="text" placeholder="Población"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="city" type="text" placeholder="Ciudad"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="cp" type="text" placeholder="Código Postal"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="phone" type="number" pattern="[0-9]*" placeholder="Telefono"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="mail" type="mail" placeholder="Mail"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input formControlName="contact" type="text" placeholder="Persona de contacto"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div padding>
+                  <button class="btn_send" ion-button block type="submit" [disabled]="!homeForm.valid">SIGUIENTE</button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </form>
+      </ion-grid>
+    </div>
+
+</ion-content>

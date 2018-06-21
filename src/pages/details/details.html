@@ -1,0 +1,126 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalles de la visita</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="back_form">
+    <ion-grid padding>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="briefcase"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{detail.client}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="home"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{ detail.direction }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="pin"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{ detail.town }}, {{ detail.city }} - {{ detail.cp }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="call"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{ detail.phone }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="mail"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{ detail.mail }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="contact"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <p no-padding no-margin>{{ detail.contact }}</p>
+        </ion-col>
+      </ion-row>
+      <hr>
+      <ion-row>
+        <ion-col class="col-check">
+          <ion-item>
+            <ion-label>Catálogo</ion-label>
+            <ion-checkbox disabled *ngIf="detail.catalogue" checked="true" color="dark"></ion-checkbox>
+            <ion-checkbox disabled *ngIf="!detail.catalogue" checked="false" color="dark"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col-check">
+          <ion-item>
+            <ion-label>Granito</ion-label>
+            <ion-checkbox disabled *ngIf="detail.granite" checked="true" color="dark"></ion-checkbox>
+            <ion-checkbox disabled *ngIf="!detail.granite" checked="false" color="dark"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col-check">
+          <ion-item>
+            <ion-label>Compac</ion-label>
+            <ion-checkbox disabled *ngIf="detail.compac" checked="true" color="dark"></ion-checkbox>
+            <ion-checkbox disabled *ngIf="!detail.compac" checked="false" color="dark"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col-check">
+          <ion-item>
+            <ion-label>Muestras</ion-label>
+            <ion-checkbox disabled *ngIf="detail.piece" checked="true" color="dark"></ion-checkbox>
+            <ion-checkbox disabled *ngIf="!detail.piece" checked="false" color="dark"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+            <p no-padding no-margin>Espositores entregados: {{ detail.expositor }}</p>
+        </ion-col>
+
+        <!-- <ion-col class="col-check">
+          <ion-item>
+            <ion-label>Expositor</ion-label>
+            <ion-checkbox disabled *ngIf="detail.expositor" checked="true" color="dark"></ion-checkbox>
+            <ion-checkbox disabled *ngIf="!detail.expositor" checked="false" color="dark"></ion-checkbox>
+          </ion-item>
+        </ion-col> -->
+      </ion-row>
+      <ion-row>
+        <ion-col class="col-check">
+          <ion-label>
+            <h6>NOTAS</h6>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col-check">
+          {{ detail.notes }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

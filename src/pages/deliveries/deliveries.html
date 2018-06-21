@@ -1,0 +1,141 @@
+<ion-header>
+
+  <ion-navbar hideBackButton="{{ displayPopup ? 'true' : 'false' }}">
+    <ion-title>Entregas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div id="overlay" (click)="exit()">
+    <h3>Formulario enviado correctamente</h3>
+  </div>
+  
+  <div>
+    <ion-grid no-padding>
+      <form [formGroup]="deliveriesForm" (ngSubmit)="next()" >
+        <div class="back_form">
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                  <ion-label>Entrega cátalogo</ion-label>
+                  <ion-checkbox formControlName="catalogue" value="false" [(ngModel)]="catalogue"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                  <ion-label>Entrega tarifas granito</ion-label>
+                  <ion-checkbox formControlName="granite" [(ngModel)]="granite"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                  <ion-label>Entrega tarifas compac</ion-label>
+                  <ion-checkbox formControlName="compac" [(ngModel)]="compac"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Entrega muestras</ion-label>
+                    <ion-checkbox formControlName="piece" [(ngModel)]="piece"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                  <ion-label>Expositores entregados</ion-label>
+                  <ion-select formControlName="expositor" [(ngModel)]="expositor" multiple="true">
+                    <ion-option>1</ion-option>
+                    <ion-option>2</ion-option>
+                    <ion-option>3</ion-option>
+                    <ion-option>4</ion-option>
+                    <ion-option>5</ion-option>
+                    <ion-option>6</ion-option>
+                    <ion-option>7</ion-option>
+                    <ion-option>8</ion-option>
+                    <ion-option>9</ion-option>
+                    <ion-option>10</ion-option>
+                    <ion-option>11</ion-option>
+                    <ion-option>12</ion-option>
+                    <ion-option>13</ion-option>
+                    <ion-option>14</ion-option>
+                    <ion-option>15</ion-option>
+                    <ion-option>16</ion-option>
+                    <ion-option>17</ion-option>
+                    <ion-option>18</ion-option>
+                    <ion-option>19</ion-option>
+                    <ion-option>20</ion-option>
+                    <ion-option>21</ion-option>
+                    <ion-option>22</ion-option>
+                    <ion-option>23</ion-option>
+                    <ion-option>24</ion-option>
+                    <ion-option>25</ion-option>
+                    <ion-option>26</ion-option>
+                    <ion-option>27</ion-option>
+                    <ion-option>28</ion-option>
+                    <ion-option>29</ion-option>
+                    <ion-option>30</ion-option>
+                    <ion-option>31</ion-option>
+                    <ion-option>32</ion-option>
+                    <ion-option>33</ion-option>
+                    <ion-option>34</ion-option>
+                    <ion-option>35</ion-option>
+                    <ion-option>36</ion-option>
+                    <ion-option>37</ion-option>
+                    <ion-option>38</ion-option>
+                    <ion-option>39</ion-option>
+                    <ion-option>40</ion-option>
+                    <ion-option>41</ion-option>
+                    <ion-option>42</ion-option>
+                    <ion-option>43</ion-option>
+                    <ion-option>44</ion-option>
+                    <ion-option>45</ion-option>
+                    <ion-option>46</ion-option>
+                    <ion-option>47</ion-option>
+                    <ion-option>48</ion-option>
+                    <ion-option>49</ion-option>
+                    <ion-option>50</ion-option>
+                  </ion-select>
+                </ion-item>
+              <!-- <ion-item>
+                  <ion-label>Entrega expositor</ion-label>
+                  <ion-checkbox formControlName="expositor" [(ngModel)]="expositor"></ion-checkbox>
+              </ion-item> -->
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Notas:</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-textarea">
+            <ion-col>
+              <ion-item>
+                <ion-textarea formControlName="notes" type="text" placeholder="(Añade cualquier nota. En caso de haber entregado muestras, especifique cuales.)"></ion-textarea>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div padding>
+                <button class="btn_send" ion-button block type="submit" [disabled]="!deliveriesForm.valid">ENVIAR</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
+    </ion-grid>
+  </div>
+
+</ion-content>
